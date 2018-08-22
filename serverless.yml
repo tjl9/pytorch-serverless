@@ -24,7 +24,7 @@ provider:
 
   # you can define service wide environment variables here
   environment:
-    BUCKET_NAME: leopardsvscheetahs
+    BUCKET_NAME: leopardscheetahs
     STATE_DICT_NAME: leopardscheetahs.h5
     IMAGE_SIZE: 299
     LABELS_PATH: lib/labels.txt
