@@ -11,14 +11,14 @@ import numpy as np
 from lib.models import classification_model
 from lib.utils import download_file, get_labels, open_image_url
 from fastai.core import A, T, VV_
-from fastai.transforms import tfms_from_stats
+from fastai.transforms import *
 
 
 BUCKET_NAME = os.environ['BUCKET_NAME']
 STATE_DICT_NAME = os.environ['STATE_DICT_NAME']
-STATS = A(*eval(os.environ['IMAGE_STATS']))
-SZ = int(os.environ.get('IMAGE_SIZE', '224'))
-TFMS = tfms_from_stats(STATS, SZ)[-1]
+SZ = int(os.environ.get('IMAGE_SIZE', '299'))
+TFMS_FROM_MODEL = tfms_from_model('resnet34', SZ)
+TFMS = TFMS_FROM_MODEL[1]
 
 
 class SetupModel(object):

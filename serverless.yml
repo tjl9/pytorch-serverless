@@ -13,8 +13,8 @@ provider:
   name: aws
   runtime: python3.6
   stage: dev
-  region: us-west-2
-  profile: slsadmin
+  region: eu-central-1
+  profile: default
   memorySize: 2048
   timeout: 120
   # you can define API keys to generate here
@@ -24,10 +24,9 @@ provider:
 
   # you can define service wide environment variables here
   environment:
-    BUCKET_NAME: pytorch-serverless
-    STATE_DICT_NAME: dogscats-resnext50.h5
-    IMAGE_SIZE: 224
-    IMAGE_STATS: ([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    BUCKET_NAME: leopardsvscheetahs
+    STATE_DICT_NAME: leopardscheetahs.h5
+    IMAGE_SIZE: 299
     LABELS_PATH: lib/labels.txt
 
   # you can define custom configuration variables here
